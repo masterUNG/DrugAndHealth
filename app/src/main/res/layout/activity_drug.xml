@@ -29,8 +29,8 @@
             android:layout_gravity="bottom|center_horizontal">
 
             <Button
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:id="@+id/button7"
                 android:background="@drawable/mm1" />
 
@@ -52,8 +52,8 @@
             android:layout_gravity="center_horizontal">
 
             <Button
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:id="@+id/button8"
                 android:background="@drawable/mm3" />
 
@@ -75,8 +75,8 @@
             android:layout_gravity="center_horizontal">
 
             <Button
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:id="@+id/button9"
                 android:background="@drawable/mm2" />
 
@@ -90,5 +90,27 @@
                 android:layout_gravity="center" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:id="@+id/button12"
+                android:background="@drawable/mm4" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="ชนิดอื่นๆ"
+                android:id="@+id/textView23"
+                android:textSize="30sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>
