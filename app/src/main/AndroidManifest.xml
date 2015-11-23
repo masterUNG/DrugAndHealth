@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DrugActivity"></activity>
+        <activity android:name=".DrugActivity" />
+        <activity android:name=".HerbActivity"></activity>
     </application>
 
 </manifest>
