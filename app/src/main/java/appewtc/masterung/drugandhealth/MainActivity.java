@@ -29,5 +29,9 @@ public class MainActivity extends AppCompatActivity {
        startActivity(new Intent(MainActivity.this, HerbActivity.class));
     }
 
+    public void clickPersonal(View view) {
+        startActivity(new Intent(MainActivity.this, PersonalActivity.class));
+    }
+
 
 }   // Main Class
