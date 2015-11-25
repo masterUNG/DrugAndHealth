@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|center_horizontal">
 
-            <Button
+            <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:id="@+id/button10"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
 
-            <Button
+            <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:id="@+id/button11"
