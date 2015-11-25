@@ -22,7 +22,22 @@ public class ListDrugHerbActivity extends AppCompatActivity {
 
         showView();
 
+        createListView();
+
     }   // onCreate
+
+    private void createListView() {
+
+        //Tester
+        String[] strTester = {"ทดสอบที่ 1", "ทดสอบที่ 2", "ทดสอบที่ 3", "ทดสอบที่ 4",
+                "ทดสอบที่ 5", "ทดสอบที่ 6", "ทดสอบที่ 7", "ทดสอบที่ 8", "ทดสอบที่ 9", "ทดสอบที่ 10"};
+
+
+        MyAdapter objMyAdapter = new MyAdapter(ListDrugHerbActivity.this, keyAnInt, strTester);
+        drugListView.setAdapter(objMyAdapter);
+
+    }   // createListView
+
 
     private void showView() {
 
