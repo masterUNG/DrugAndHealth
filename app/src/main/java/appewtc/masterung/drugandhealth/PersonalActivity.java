@@ -14,7 +14,7 @@ public class PersonalActivity extends AppCompatActivity {
 
     public void clickSavePersonal(View view) {
 
-        testAddValue();
+        //testAddValue();
 
     }   // clickSavePersonal
 
