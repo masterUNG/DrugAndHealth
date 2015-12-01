@@ -18,7 +18,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Text"
-            android:id="@+id/txtDrugName" />
+            android:id="@+id/txtDrugName"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
