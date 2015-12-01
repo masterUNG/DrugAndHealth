@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="appewtc.masterung.drugandhealth.DetailActivity">
+    tools:context="appewtc.masterung.drugandhealth.DetailActivity"
+    android:background="@drawable/black3">
 
     <LinearLayout
         android:orientation="vertical"
@@ -17,52 +18,66 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
             android:id="@+id/txtDrugName"
+            android:textSize="35sp"
+            android:textIsSelectable="true"
+            android:layout_gravity="center_horizontal"
+            android:text="Drug_Name"
+            android:textColor="#040404" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:id="@+id/txtDrugType"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_gravity="center_horizontal" />
+            android:textColor="#050505" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/txtDrugType" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView11" />
+            android:text="Properties"
+            android:id="@+id/textView11"
+            android:textSize="30sp"
+            android:textColor="#050505" />
 
         <ScrollView
-            android:layout_width="250dp"
-            android:layout_height="100dp"
-            android:id="@+id/scrollView" >
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:id="@+id/scrollView"
+            android:background="#96fcf8f8">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/txtProperies" />
+                android:id="@+id/txtProperies"
+                android:textSize="25sp"
+                android:textColor="#030303" />
         </ScrollView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView12" />
+            android:text="HowTo"
+            android:id="@+id/textView12"
+            android:textSize="30sp"
+            android:textColor="#040404" />
 
         <ScrollView
-            android:layout_width="250dp"
-            android:layout_height="100dp"
-            android:id="@+id/scrollView2" >
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:id="@+id/scrollView2"
+            android:fillViewport="false"
+            android:background="#96ffffff">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New Text"
-                android:id="@+id/txtHowto" />
+                android:id="@+id/txtHowto"
+                android:textSize="25sp"
+                android:textColor="#040404" />
         </ScrollView>
     </LinearLayout>
 </RelativeLayout>
