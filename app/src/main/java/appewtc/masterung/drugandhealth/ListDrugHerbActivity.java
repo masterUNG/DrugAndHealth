@@ -56,8 +56,6 @@ public class ListDrugHerbActivity extends AppCompatActivity {
 
             SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase("drug.db", MODE_PRIVATE, null);
 
-
-
             Cursor objCursor = objSqLiteDatabase.rawQuery("SELECT * FROM drugTABLE WHERE Type1 = " + "'" + keyString + "'", null );
 
             objCursor.moveToFirst();
