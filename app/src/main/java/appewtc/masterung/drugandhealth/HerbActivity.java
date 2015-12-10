@@ -51,7 +51,7 @@ public class HerbActivity extends AppCompatActivity implements View.OnClickListe
 
         Intent objIntent = new Intent(HerbActivity.this, ListDrugHerbActivity.class);
         objIntent.putExtra("Title", strTitle);
-        objIntent.putExtra("Key", intKey);
+        objIntent.putExtra("key", intKey);
         startActivity(objIntent);
 
     }

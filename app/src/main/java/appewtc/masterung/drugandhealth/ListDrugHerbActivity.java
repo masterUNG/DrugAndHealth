@@ -51,6 +51,15 @@ public class ListDrugHerbActivity extends AppCompatActivity {
             case 3:
                 keyString = "ทา";
                 break;
+            case 4:
+                keyString = "อื่นๆ";
+                break;
+            case 5:
+                keyString = "ยาใช้ภายนอก";
+                break;
+            case 6:
+                keyString = "ยาใช้ภานใน";
+                break;
             default:
                 break;
         }
