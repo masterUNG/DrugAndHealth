@@ -2,6 +2,7 @@ package appewtc.masterung.drugandhealth;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -23,7 +24,12 @@ public class ManageTABLE {
     public static final String COLUMN_MYDRUG = "MyDrug";
     public static final String COLUMN_ALERT = "Alert";
 
-
+    public static final String TABLE_DRUG = "drugTABLE";
+    public static final String COLUMN_Drug_Name = "Drug_Name";
+    public static final String COLUMN_Type1 = "Type1";
+    public static final String COLUMN_Type2 = "Type2";
+    public static final String COLUMN_Properties = "Properties";
+    public static final String COLUMN_HowToUse = "HowToUse";
 
 
     public ManageTABLE(Context context) {
@@ -34,6 +40,42 @@ public class ManageTABLE {
         readSqLiteDatabase = objMyOpenHelper.getReadableDatabase();
 
     }   // Constructor
+
+    public String[] searchDrug(String strNameDrug) {
+
+        try {
+
+            String[] strResult = null;
+            Cursor objCursor = readSqLiteDatabase.query(TABLE_DRUG,
+                    new String[]{COLUMN_ID, COLUMN_Drug_Name, COLUMN_Type1, COLUMN_Type2, COLUMN_Properties, COLUMN_HowToUse},
+                    COLUMN_Drug_Name + "=?",
+                    new String[]{String.valueOf(strNameDrug)},
+                    null, null, null, null);
+
+            if (objCursor != null) {
+
+                if (objCursor.moveToFirst()) {
+
+                    strResult = new String[6];
+                    for (int i=0; i<6; i++) {
+                        strResult[i] = objCursor.getString(i);
+                    }   // for
+
+
+
+                }   //if2
+
+            }   // if1
+
+            objCursor.close();
+            return strResult;
+
+        } catch (Exception e) {
+            return null;
+        }
+
+
+    }
 
     public long addNewValue(String strUser,
                             String strHistory,
