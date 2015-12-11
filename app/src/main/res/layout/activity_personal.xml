@@ -148,22 +148,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView21"
+        android:id="@+id/ragAlert"
         android:layout_alignParentRight="true"
         android:layout_marginRight="30dp">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2.50 ชั่วโมง"
+            android:text="3 ชั่วโมง"
             android:id="@+id/radioButton"
             android:layout_below="@+id/textView21"
             android:layout_alignLeft="@+id/radioButton3"
-            android:layout_alignStart="@+id/radioButton3" />
+            android:layout_alignStart="@+id/radioButton3"
+            android:checked="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="5.50 ชั่วโมง"
+            android:text="6 ชั่วโมง"
             android:id="@+id/radioButton2"
             android:layout_below="@+id/radioButton"
             android:layout_alignLeft="@+id/radioButton"
@@ -172,7 +174,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7.50 ชั่วโมง"
+            android:text="8 ชั่วโมง"
             android:id="@+id/radioButton3"
             android:layout_below="@+id/radioButton2"
             android:layout_toRightOf="@+id/linearLayout3"
