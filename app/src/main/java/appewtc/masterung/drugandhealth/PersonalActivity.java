@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -142,6 +143,9 @@ public class PersonalActivity extends AppCompatActivity {
 
                 MediaPlayer alermMediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.intro_start_horse);
                 alermMediaPlayer.start();
+
+                Toast.makeText(PersonalActivity.this, "การแจ้งเตือน ของฉัน", Toast.LENGTH_LONG).show();
+
             }
         }, minAlarmAnInt*60*1000);
 
