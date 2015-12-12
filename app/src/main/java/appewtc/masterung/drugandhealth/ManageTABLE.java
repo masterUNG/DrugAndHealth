@@ -41,6 +41,18 @@ public class ManageTABLE {
 
     }   // Constructor
 
+    public Cursor readAllData() {
+
+        Cursor objCursor = readSqLiteDatabase.query(TABLE_USER,
+                new String[]{COLUMN_ID, COLUMN_USER, COLUMN_HISTORY, COLUMN_USED, COLUMN_ALLERGIES, COLUMN_RESISTANCE, COLUMN_MYDRUG, COLUMN_ALERT},
+                null, null, null, null, null);
+        if (objCursor != null) {
+            objCursor.moveToFirst();
+        }
+
+        return objCursor;
+    }
+
     public String[] searchDrug(String strNameDrug) {
 
         try {

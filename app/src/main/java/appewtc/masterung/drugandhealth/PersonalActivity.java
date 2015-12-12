@@ -1,5 +1,6 @@
 package appewtc.masterung.drugandhealth;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -37,6 +38,10 @@ public class PersonalActivity extends AppCompatActivity {
         radioController();
 
     }   // onCreate
+
+    public void clickReadAllUser(View view) {
+        startActivity(new Intent(PersonalActivity.this, ReadAllUserListView.class));
+    }
 
     private void radioController() {
 

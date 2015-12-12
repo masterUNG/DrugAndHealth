@@ -19,7 +19,8 @@
         <activity android:name=".HerbActivity" />
         <activity android:name=".PersonalActivity" />
         <activity android:name=".ListDrugHerbActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".ReadAllUserListView"></activity>
     </application>
 
 </manifest>

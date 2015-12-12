@@ -131,6 +131,7 @@
         android:layout_height="wrap_content"
         android:text="ข้อมูลผู้ใช้"
         android:id="@+id/button3"
+        android:onClick="clickReadAllUser"
         android:layout_alignTop="@+id/button2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
