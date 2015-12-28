@@ -37,8 +37,8 @@ public class MyAlertDialog {
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(context);
         objBuilder.setIcon(R.drawable.danger);
         objBuilder.setTitle(strUsed);
-        objBuilder.setMessage("History = " + strHistory + "\n" +
-                "Used = " + strUsed + "\n" +
+        objBuilder.setMessage("ประวัติ = " + strHistory + "\n" +
+                "ผู้ใช้ = " + strUsed + "\n" +
                 "Allergies = " + strAllergies + "\n" +
                 "Resistance = " + strResistance + "\n" +
                 "MyDrug = " + strMyDrug + "\n" +
