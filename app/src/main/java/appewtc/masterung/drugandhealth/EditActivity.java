@@ -1,7 +1,9 @@
 package appewtc.masterung.drugandhealth;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,7 +16,7 @@ public class EditActivity extends AppCompatActivity {
     private RadioGroup alertRadioGroup;
     private RadioButton choice1RadioButton, choice2RadioButton, choice3RadioButton;
     private String nameUserString, historyString, usedString,
-            allergiesString, resistanceString, myDrugString;
+            allergiesString, resistanceString, myDrugString, alertString;
     private int alertAnInt = 3, timeAlertAnInt, minAlarmAnInt = 1;
 
     @Override
@@ -25,7 +27,49 @@ public class EditActivity extends AppCompatActivity {
         //Bind Widget
         bindWidget();
 
+        //Receive Value From Intent
+        receiveValue();
+
+        //Show View
+        showView();
+
     }   // Main Method
+
+    public void clickSaveEdit(View view) {
+
+    }
+
+    public void clcikInforEdit(View view) {
+        Intent objIntent = new Intent(EditActivity.this, ReadAllUserListView.class);
+        startActivity(objIntent);
+    }
+
+
+
+    private void showView() {
+
+        nameUserEditText.setText(nameUserString);
+        historyEditText.setText(historyString);
+        usedEditText.setText(usedString);
+        allergiesEditText.setText(allergiesString);
+        resistanceEditText.setText(resistanceString);
+        myDrugEditText.setText(myDrugString);
+        allergiesEditText.setText(alertString);
+
+    }   // shwoView
+
+    private void receiveValue() {
+
+        nameUserString = getIntent().getStringExtra("User");
+        historyString = getIntent().getStringExtra("History");
+        usedString = getIntent().getStringExtra("Used");
+        allergiesString = getIntent().getStringExtra("Allergies");
+        resistanceString = getIntent().getStringExtra("Resistance");
+        myDrugString = getIntent().getStringExtra("Drug");
+        alertString = getIntent().getStringExtra("Alert");
+
+
+    }   // receiveValue
 
     private void bindWidget() {
 
