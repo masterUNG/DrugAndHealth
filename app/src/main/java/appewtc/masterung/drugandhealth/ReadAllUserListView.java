@@ -5,6 +5,7 @@ import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
@@ -96,9 +97,36 @@ public class ReadAllUserListView extends ListActivity {
             }
         });
 
+        objBuilder.setNeutralButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                deleteMyData(strUser);
+
+            }
+        });
+
 
         objBuilder.show();
 
 
     }   // showAlert
+
+    private void deleteMyData(String strUser) {
+
+        SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
+
+        //Delete
+        Cursor deleteCursor = objSqLiteDatabase.rawQuery("SELECT * FROM userTABLE WHERE User = " + "'" + strUser + "'" , null);
+        deleteCursor.moveToFirst();
+        String strID = deleteCursor.getString(deleteCursor.getColumnIndex(ManageTABLE.COLUMN_ID));
+        int intID = Integer.parseInt(strID);
+
+        objSqLiteDatabase.delete(ManageTABLE.TABLE_USER, ManageTABLE.COLUMN_ID + "=" + intID, null);
+
+
+        createListView();
+
+
+    }
 }   // Main Class

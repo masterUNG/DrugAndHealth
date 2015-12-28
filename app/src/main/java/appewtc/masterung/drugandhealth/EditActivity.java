@@ -62,6 +62,9 @@ public class EditActivity extends AppCompatActivity {
         objManageTABLE.addNewValue(nameUserString, historyString, usedString, allergiesString, resistanceString, myDrugString, alertString);
 
 
+        Intent objIntent = new Intent(EditActivity.this, MainActivity.class);
+        startActivity(objIntent);
+
     }   // clickSave
 
     public void clcikInforEdit(View view) {
