@@ -20,7 +20,8 @@
         <activity android:name=".PersonalActivity" />
         <activity android:name=".ListDrugHerbActivity" />
         <activity android:name=".DetailActivity" />
-        <activity android:name=".ReadAllUserListView"></activity>
+        <activity android:name=".ReadAllUserListView" />
+        <activity android:name=".EditActivity"></activity>
     </application>
 
 </manifest>

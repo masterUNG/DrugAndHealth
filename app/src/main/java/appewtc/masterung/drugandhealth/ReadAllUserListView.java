@@ -1,13 +1,16 @@
 package appewtc.masterung.drugandhealth;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.widget.ListView;
 
-public class ReadAllUserListView extends ListActivity{
+public class ReadAllUserListView extends ListActivity {
 
     //Explicit
     private ManageTABLE objManageTABLE;
@@ -46,8 +49,8 @@ public class ReadAllUserListView extends ListActivity{
         String strMyDrug = objCursor.getString(objCursor.getColumnIndex(ManageTABLE.COLUMN_MYDRUG));
         String strAlert = objCursor.getString(objCursor.getColumnIndex(ManageTABLE.COLUMN_ALERT));
 
-        MyAlertDialog objMyAlertDialog = new MyAlertDialog();
-        objMyAlertDialog.readAllDialog(ReadAllUserListView.this, strUser,
+        //Show Alert
+        showAlert(strUser,
                 strHistory,
                 strUsed,
                 strAllergies,
@@ -56,5 +59,53 @@ public class ReadAllUserListView extends ListActivity{
                 strAlert);
 
 
+//        MyAlertDialog objMyAlertDialog = new MyAlertDialog();
+//        objMyAlertDialog.readAllDialog(ReadAllUserListView.this, strUser,
+//                strHistory,
+//                strUsed,
+//                strAllergies,
+//                strResistance,
+//                strMyDrug,
+//                strAlert);
+
+
     }
+
+    private void showAlert(final String strUser, final String strHistory, final String strUsed, final String strAllergies, final String strResistance, final String strMyDrug, final String strAlert) {
+
+        AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
+        objBuilder.setIcon(R.drawable.danger);
+        objBuilder.setTitle(strUsed);
+        objBuilder.setMessage("ประวัติ = " + strHistory + "\n" +
+                "ผู้ใช้ = " + strUsed + "\n" +
+                "Allergies = " + strAllergies + "\n" +
+                "Resistance = " + strResistance + "\n" +
+                "MyDrug = " + strMyDrug + "\n" +
+                "Alert = " + strAlert);
+        objBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        objBuilder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent objIntent = new Intent(ReadAllUserListView.this, EditActivity.class);
+                objIntent.putExtra("User", strUser);
+                objIntent.putExtra("History", strHistory);
+                objIntent.putExtra("Used", strUsed);
+                objIntent.putExtra("Allergies", strAllergies);
+                objIntent.putExtra("Resistance", strResistance);
+                objIntent.putExtra("Drug", strMyDrug);
+                objIntent.putExtra("Alert", strAlert);
+                startActivity(objIntent);
+            }
+        });
+
+
+        objBuilder.show();
+
+
+    }   // showAlert
 }   // Main Class
