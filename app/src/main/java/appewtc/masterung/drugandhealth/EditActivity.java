@@ -1,6 +1,8 @@
 package appewtc.masterung.drugandhealth;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,7 +39,18 @@ public class EditActivity extends AppCompatActivity {
 
     public void clickSaveEdit(View view) {
 
-    }
+        SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
+
+        //Delete
+        Cursor deleteCursor = objSqLiteDatabase.rawQuery("SELECT * FROM userTABLE WHERE User = " + "'" + nameUserString + "'" , null);
+        deleteCursor.moveToFirst();
+        String strID = deleteCursor.getString(deleteCursor.getColumnIndex(ManageTABLE.COLUMN_ID));
+        int intID = Integer.parseInt(strID);
+
+        objSqLiteDatabase.delete(ManageTABLE.TABLE_USER, ManageTABLE.COLUMN_ID + "=" + intID, null);
+
+
+    }   // clickSave
 
     public void clcikInforEdit(View view) {
         Intent objIntent = new Intent(EditActivity.this, ReadAllUserListView.class);

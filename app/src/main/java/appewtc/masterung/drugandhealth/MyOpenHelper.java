@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MyOpenHelper extends SQLiteOpenHelper {
 
     //Explicit
-    private static final String DATABASE_NAME = "drug.db";
+    public static final String DATABASE_NAME = "drug.db";
     private static final int DATABASE_VERSION = 1;
     private static final String CREATE_DRUG_TABLE = "create table drugTABLE (_id integer primary key, Drug_Name text, Type1 text, Type2 text, Properties text, HowToUse text);";
     private static final String CREATE_USER_TABLE = "create table userTABLE (_id integer primary key, User text, History text, Used text, Allergies text, Resistance text, MyDrug text, Alert text);";
