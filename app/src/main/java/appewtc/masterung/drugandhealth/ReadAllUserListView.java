@@ -59,14 +59,7 @@ public class ReadAllUserListView extends ListActivity {
                 strAlert);
 
 
-//        MyAlertDialog objMyAlertDialog = new MyAlertDialog();
-//        objMyAlertDialog.readAllDialog(ReadAllUserListView.this, strUser,
-//                strHistory,
-//                strUsed,
-//                strAllergies,
-//                strResistance,
-//                strMyDrug,
-//                strAlert);
+
 
 
     }
