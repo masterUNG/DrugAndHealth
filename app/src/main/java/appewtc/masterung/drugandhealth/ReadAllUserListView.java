@@ -60,9 +60,6 @@ public class ReadAllUserListView extends ListActivity {
                 strAlert);
 
 
-
-
-
     }
 
     private void showAlert(final String strUser, final String strHistory, final String strUsed, final String strAllergies, final String strResistance, final String strMyDrug, final String strAlert) {
@@ -117,7 +114,7 @@ public class ReadAllUserListView extends ListActivity {
         SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase(MyOpenHelper.DATABASE_NAME, MODE_PRIVATE, null);
 
         //Delete
-        Cursor deleteCursor = objSqLiteDatabase.rawQuery("SELECT * FROM userTABLE WHERE User = " + "'" + strUser + "'" , null);
+        Cursor deleteCursor = objSqLiteDatabase.rawQuery("SELECT * FROM userTABLE WHERE User = " + "'" + strUser + "'", null);
         deleteCursor.moveToFirst();
         String strID = deleteCursor.getString(deleteCursor.getColumnIndex(ManageTABLE.COLUMN_ID));
         int intID = Integer.parseInt(strID);
